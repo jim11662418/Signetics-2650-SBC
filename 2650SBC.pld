@@ -30,12 +30,6 @@ pin 15 = OUTPORT;
 pin 14 = !INPORT;
 pin 13 = !WRTC;         /* used to trigger logic analyzer */
 
-/*  just a reminder for me (Jim)... */
-/*  ! = NOT                         */
-/*  & = AND                         */
-/*  # = OR                          */
-/*  $ = XOR                         */
-
 WR = WRP & RW;
 RD = !RW;
 
