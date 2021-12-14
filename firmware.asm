@@ -43,7 +43,7 @@ blen        equ 20                      ;size of input buffer
 
 LEDport     equ $7F00                   ;output port controlling LEDs
 
-;don't know why, but placing these assembler directives at the top of
+;don't know why, but placing these assembler directives at the beginning of
 ;the file causes an access violation.
 PAGE 255
 WIDTH 132
