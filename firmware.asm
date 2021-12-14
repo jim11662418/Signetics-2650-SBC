@@ -1,7 +1,9 @@
 NOFOLD
 
-; at start-up a simple menu allows the choice of PIPBUG or the MicroWorld 
-; BASIC interpreter.
+; firmware for the Signetics 2650 single board computer
+;
+; at start-up a simple menu allows the choice of the PIPBUG monitor 
+; or the MicroWorld BASIC interpreter.
 ;
 ; PIPBUG has been modified as follows:
 ;  - the I/O functions 'chin' and 'cout' were re-written for 9600 bps N-8-1.
