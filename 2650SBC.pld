@@ -1,0 +1,47 @@
+Name        2650SBC;
+Partno      ;
+Revision    ;
+Date        10/17/2021;
+Designer    Jim Loos;
+Company     ;
+Location    ;
+Assembly    ;
+Device      G16V8A;
+
+/** Inputs **/
+pin 1  = MIO;
+pin 2  = RW;
+pin 3  = WRP;
+pin 4  = OPREQ;
+pin 5  = A14;
+pin 6  = A13;
+pin 7  = A12;
+pin 8  = A11;
+pin 9  = A10;
+pin 11 = A9;
+pin 12 = A8;
+
+/** Outputs **/
+pin 19 = !RAMCS;
+pin 18 = !ROMCS;
+pin 17 = !RD;
+pin 16 = !WR;
+pin 15 = OUTPORT;
+pin 14 = !INPORT;
+pin 13 = !WRTC;         /* used to trigger logic analyzer */
+
+/*  just a reminder for me (Jim)... */
+/*  ! = NOT                         */
+/*  & = AND                         */
+/*  # = OR                          */
+/*  $ = XOR                         */
+
+WR = WRP & RW;
+RD = !RW;
+
+FIELD ADDRESS = [A14..A8];
+ROMCS    = OPREQ & MIO & (ADDRESS:[00XX..03XX] # ADDRESS:[08XX..1FXX] # ADDRESS:[60XX..6FXX]);
+RAMCS    = OPREQ & MIO & (ADDRESS:[04XX..07XX] # ADDRESS:[20XX..5FXX] # ADDRESS:[70XX..7EXX]);
+OUTPORT  = OPREQ & MIO &  ADDRESS:[7FXX] & (WRP & RW);
+INPORT   = OPREQ & MIO &  ADDRESS:[7FXX] & !RW;
+WRTC     = OPREQ & !MIO & (WRP & RW) & !A13 & !A14; /* Write Control */
