@@ -10,6 +10,7 @@ NOFOLD
 ;  - the 'D' (Dump to paper tape) function has been removed.
 ;  - the 'L' (Load) function has been re-written to load an Intel hex format file.
 ;  - the 'chin' function has been modified to convert lower case input to upper case.
+;  - entering '?' at the PIPBUG prompt displays a list of PIPBUG commands.
 ;
 ; memory map:
 ;   0000-03FF   PIPBUG in EPROM
